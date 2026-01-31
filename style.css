@@ -231,8 +231,21 @@ footer {
 @media (max-width: 768px) {
   section {
     padding: 5rem 0;
-
+  }
+  
+  .nav-links {
+    gap: 1.4rem;
+    font-size: 0.95rem;
+  }
+  
+  h1 { font-size: 3.2rem; }
+  h2 { font-size: 2.2rem; }
 }
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
   
   .btn {
     padding: 0.7rem 1.4rem;
