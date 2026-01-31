@@ -231,3 +231,10 @@ footer {
 @media (max-width: 768px) {
   section {
     padding: 5rem 0;
+
+}
+  
+  .btn {
+    padding: 0.7rem 1.4rem;
+  }
+}
