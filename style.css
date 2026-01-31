@@ -1,0 +1,233 @@
+/* ==========================================================================
+   Portfolio Style - Black + Deep Blue Theme
+   2026 modern dark aesthetic
+   ========================================================================== */
+
+/* ── Reset & Base ──────────────────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  background-color: #0a0e17;
+  color: #e2e8f0;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── Colors ────────────────────────────────────────────────────────────── */
+:root {
+  --bg-primary:    #0a0e17;
+  --bg-secondary:  #111827;
+  --bg-tertiary:   #1e293b;
+  --blue-dark:     #0f172a;
+  --blue-deep:     #1e40af;
+  --blue-primary:  #3b82f6;
+  --blue-bright:   #60a5fa;
+  --blue-glow:     #93c5fd;
+  --text-primary:  #f1f5f9;
+  --text-secondary:#94a3b8;
+  --text-muted:    #64748b;
+  --border:        #334155;
+  --accent-glow:   rgba(59, 130, 246, 0.18);
+  --card-hover:    rgba(59, 130, 246, 0.08);
+}
+
+/* ── Typography ────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4.2rem); }
+h2 { font-size: clamp(1.8rem, 5vw, 2.8rem); margin-bottom: 1rem; }
+h3 { font-size: 1.6rem; margin: 2rem 0 1rem; }
+
+a {
+  color: var(--blue-bright);
+  text-decoration: none;
+  transition: all 0.22s ease;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--blue-glow);
+  text-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* ── Layout & Containers ───────────────────────────────────────────────── */
+.container {
+  width: min(92%, 1280px);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  padding: 7rem 0;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a 0%, #0a0e17 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle animated background gradient (optional) */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, var(--blue-deep) 0%, transparent 40%);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* ── Cards & Projects ──────────────────────────────────────────────────── */
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.8rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--blue-primary);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4),
+              0 0 0 1px var(--blue-primary),
+              inset 0 0 20px var(--card-hover);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent, var(--card-hover), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* ── Buttons ───────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--blue-primary);
+  color: white;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+}
+
+.btn-primary:hover {
+  background: var(--blue-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.45);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--blue-primary);
+  color: var(--blue-bright);
+}
+
+.btn-outline:hover {
+  background: var(--card-hover);
+  border-color: var(--blue-bright);
+  color: white;
+}
+
+/* ── Navigation ────────────────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(10, 14, 23, 0.72);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 1.2rem 0;
+  transition: all 0.3s ease;
+}
+
+.nav-scrolled {
+  background: rgba(10, 14, 23, 0.92);
+  padding: 0.9rem 0;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.2rem;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: white;
+  text-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* ── Text utilities ────────────────────────────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(90deg, #60a5fa, #a5b4fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.accent {
+  color: var(--blue-bright);
+}
+
+/* ── Footer ────────────────────────────────────────────────────────────── */
+footer {
+  background: var(--bg-dark);
+  border-top: 1px solid var(--border);
+  padding: 4rem 0 2rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  section {
+    padding: 5rem 0;
